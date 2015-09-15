@@ -27,7 +27,7 @@ public class Cat
         else
             return false;
 
-        //напишите тут ваш код
+        // return ((this.age < anotherCat.age) && (this.weight > anotherCat.weight) || (this.strength > anotherCat.strength))
 
     }
 }

@@ -38,10 +38,19 @@ public class Cat
 
     public boolean fight(Cat anotherCat)
     {
+<<<<<<< HEAD
         //if ((this.age < anotherCat.age)  && (this.weight > anotherCat.weight) || (this.strength > anotherCat.strength))
         //return true;
         //else
         //    return false;
+=======
+        if ((this.age < anotherCat.age)  && (this.weight > anotherCat.weight) || (this.strength > anotherCat.strength))
+        return true;
+        else
+            return false;
+
+        // return ((this.age < anotherCat.age) && (this.weight > anotherCat.weight) || (this.strength > anotherCat.strength))
+>>>>>>> origin/master
 
          return ((this.age < anotherCat.age) && (this.weight > anotherCat.weight) || (this.strength > anotherCat.strength));
 		

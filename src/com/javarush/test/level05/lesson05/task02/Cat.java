@@ -38,25 +38,17 @@ public class Cat
 
     public boolean fight(Cat anotherCat)
     {
-<<<<<<< HEAD
-        //if ((this.age < anotherCat.age)  && (this.weight > anotherCat.weight) || (this.strength > anotherCat.strength))
-        //return true;
-        //else
-        //    return false;
-=======
-        if ((this.age < anotherCat.age)  && (this.weight > anotherCat.weight) || (this.strength > anotherCat.strength))
+
+     /*  if ((this.age < anotherCat.age)  && (this.weight > anotherCat.weight) || (this.strength > anotherCat.strength))
         return true;
         else
             return false;
-
-        // return ((this.age < anotherCat.age) && (this.weight > anotherCat.weight) || (this.strength > anotherCat.strength))
->>>>>>> origin/master
-
+    */
          return ((this.age < anotherCat.age) && (this.weight > anotherCat.weight) || (this.strength > anotherCat.strength));
 		
 		/*  Еще один вариант
 		
-			int agePlus = this.age > anotherCat.age ? 1 : 0;
+			int agePlus = this.age > anotherCat.age ? 1 : 0;         // тернарный оператор if ? then : else
             int weightPlus = this.weight > anotherCat.weight ? 1 : 0;
             int strengthPlus = this.strength > anotherCat.strength ? 1 : 0;
             int score = agePlus + weightPlus + strengthPlus;

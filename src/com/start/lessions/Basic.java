@@ -107,13 +107,15 @@ public class Basic
 		System.out.println(min(a1,b1,c1) + " " + mid(a1,b1,c1) + " " + max(a1,b1,c1));
 
 		Cat cat1 = new Cat();
-		cat1.age = 10;
-		cat1.weight = 4;
-		cat1.strength = 3;
+		cat1.setName("Wooow");
+		cat1.setAge(10);
+		cat1.setWeight(4);
+		cat1.setStrength(6);
 		Cat cat2 = new Cat();
-		cat2.age = 3;
-		cat2.weight = 3;
-		cat2.strength = 2;
+		cat2.setName("awwww");
+		cat2.setAge(2);
+		cat2.setWeight(4);
+		cat2.setStrength(5);
 		System.out.println(cat1.fight(cat2));
 		System.out.println(cat2.fight(cat1));
 	}

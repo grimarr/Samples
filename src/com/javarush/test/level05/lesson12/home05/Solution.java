@@ -16,20 +16,9 @@ public class Solution
             {
                 i = buff.readLine();
                 if (i.equals("сумма")) break;
-                b = Integer.parseInt(i);
+                b = Integer.parseInt(i); // вызовет ошибку если поставить перед проверкой на "сумма"
                 a = a + b;
             }
         System.out.println(a);
     }
-
-    /* Почему не допускается запись:
-            while (true)
-            {
-                i = buff.readLine();
-                b = Integer.parseInt(i); // Влияет на i?
-                if (i.equals("сумма")) break;
-                a = a + b;
-            }
-                ?????????????
-    */
 }

@@ -10,23 +10,21 @@ import java.io.InputStreamReader;
 
 public class Solution
 {
-
     public static void main(String[] args) throws Exception
     {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int minimum;
-		int a = minimum = Integer.parseInt(reader.readLine());
-		for (int i = 1; i < 5; i++)
-		{
-        a = Integer.parseInt(reader.readLine());
+	int a = minimum = Integer.parseInt(reader.readLine());
+	for (int i = 1; i < 5; i++)
+	{
+		a = Integer.parseInt(reader.readLine());
 		minimum = min(minimum, a);
         }
-		System.out.println("Minimum = " + minimum);
+	System.out.println("Minimum = " + minimum);
     }
 
     public static int min(int a, int b)
     {
-		return a < b ? a : b;
-	}
-
+    	return a < b ? a : b;
+    }
 }

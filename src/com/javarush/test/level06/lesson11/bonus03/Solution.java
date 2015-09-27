@@ -24,7 +24,29 @@ public class Solution
     public static void main(String[] args) throws Exception
     {
         BufferedReader reader  = new BufferedReader(new InputStreamReader(System.in));
+        int[] a = new int[5];
+        int tmp;
 
-        //напишите тут ваш код
+        for (int i = 0; i < a.length; i++)                  // можно ли использовать foreach?!
+        {
+            a[i] = Integer.parseInt(reader.readLine());
+        }
+
+       for (int i = 1; i < a.length; i++)                  // выподнение 4 итераций сортировки (метод пузырька)
+        {
+            for (int b=(a.length - 1); b >= i; b--)         // выполнение итераций проверки условия
+            {
+                if (a[b-1] > a[b])  // если номер в предыдущей ячейке массива больше текущего, то меняем их местами, в противном случае продолжаем
+                {
+                    tmp = a[b];
+                    a[b] = a[b - 1];
+                    a[b - 1] = tmp;
+                }
+            }
+        }
+
+        for (int num : a) {             //foreach
+            System.out.println(num);
+        }
     }
 }

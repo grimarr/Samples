@@ -1,11 +1,8 @@
 package com.javarush.test.level08.lesson08.task05;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 /* Удалить людей, имеющих одинаковые имена
 Создать словарь (Map<String, String>) занести в него десять записей по принципу «фамилия» - «имя».
@@ -19,13 +16,13 @@ public class Solution
 				
 	return new HashMap<String, String>() 
 			{{
-				put("0","1111");
-				put("1","1111");
+				put("0","11");
+				put("1","aaa");
 				put("2","1111");
-				put("3","1111");
+				put("3","sss");
 				put("4","1111");
-				put("5","1111");
-				put("6","1111");
+				put("5","sss");
+				put("6","a");
 				put("7","1111");
 				put("8","553");
 				put("9","11");
@@ -34,23 +31,15 @@ public class Solution
 
     public static void removeTheFirstNameDuplicates(HashMap<String, String> map)
     {
-		HashMap<String, List<String>> reversed = new HashMap<String, List<String>>();
-				
-		for(Map.Entry<String, String> pair : map.entrySet()){
-			reversed.put(pair.getValue(), new ArrayList<String>(Arrays.asList(pair.getKey()))); // ошибка вот тут в заполнении листа
-		}
-        System.out.println(reversed);
-        HashMap<String, List<String>> copy = new HashMap<String, List<String>>(reversed);
+		HashSet<String> set = new HashSet<String>();
+		HashSet<String> set1 = new HashSet<String>();
 
-		for(Map.Entry<String, List<String>> pairCopy : copy.entrySet())
-		{
-			if (pairCopy.getValue().size() > 1)
-			reversed.remove(pairCopy.getKey());
+		for (String value : map.values()) {
+			if (!set1.add(value)) {
+				set.add(value);
+			}
 		}
-		map.clear();
-		for(Map.Entry<String, List<String>> pairSort : reversed.entrySet()){
-		map.put(pairSort.getValue().toString(), pairSort.getKey());
-		}
+		for (String aSet : set) removeItemFromMapByValue(map, aSet);
     }
 
     public static void removeItemFromMapByValue(HashMap<String, String> map, String value)

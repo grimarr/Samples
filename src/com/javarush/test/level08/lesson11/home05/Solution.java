@@ -25,21 +25,21 @@ public class Solution
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String s = reader.readLine();
         char[] aS = s.toCharArray();
-            outer:for (int i = 0; i < aS.length;)
-                if (!Character.isWhitespace(aS[i])){
-                        aS[i] = Character.toUpperCase(aS[i]);
+            for (int i = 0; i < aS.length;)
+                if (Character.isAlphabetic(aS[i])){
+                    aS[i] = Character.toUpperCase(aS[i]);
 
-                        for (int o = i; o < aS.length;)
-                            if (!Character.isWhitespace(aS[o]))
-                                o++;
-                            else {
-                                i = o;
-                                continue outer;
-                            }
+                            for (int o = i; o < aS.length; )
+                                if (Character.isAlphabetic(aS[o]))
+                                {o++; i = o;}
+                                else {
+                                    i = o;
+                                    break;
+                                }
                 }
                 else i++;
-        System.out.println(new String (aS));
 
+        System.out.println(new String (aS));
     }
 }
 

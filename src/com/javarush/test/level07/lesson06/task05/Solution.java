@@ -15,7 +15,7 @@ public class Solution
     public static void main(String[] args) throws Exception
     {
         BufferedReader buff = new BufferedReader(new InputStreamReader(System.in));
-        ArrayList<String> list = new ArrayList<>();
+        ArrayList<String> list = new ArrayList<String>();
         for (int i = 0; i < 5; i++)
             list.add(buff.readLine());
 

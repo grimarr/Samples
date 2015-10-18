@@ -23,7 +23,7 @@ public class Solution
 
     public static Set<Cat> createCats()
     {
-        HashSet<Cat> cats = new HashSet<>();
+        HashSet<Cat> cats = new HashSet<Cat>();
         cats.add(new Cat());
         cats.add(new Cat());
         cats.add(new Cat());

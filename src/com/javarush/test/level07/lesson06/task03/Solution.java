@@ -17,8 +17,8 @@ public class Solution
     {
         BufferedReader buff = new BufferedReader(new InputStreamReader(System.in));
 
-        ArrayList<String> list = new ArrayList<>();
-        ArrayList<String> shortLs = new ArrayList<>();
+        ArrayList<String> list = new ArrayList<String>();
+        ArrayList<String> shortLs = new ArrayList<String>();
         int min = Integer.MAX_VALUE;
 
         for (int i = 0; i < 5; i++)

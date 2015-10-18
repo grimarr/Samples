@@ -20,7 +20,7 @@ public class Solution
 {
     public static void main(String[] args)
     {
-        ArrayList<Human> family = new ArrayList<>();
+        ArrayList<Human> family = new ArrayList<Human>();
 
         Human grandpa1 = new Human("Семён", true, 99);
         Human grandpa2 = new Human("Лёша", true, 89);

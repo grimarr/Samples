@@ -48,31 +48,28 @@ public class Solution
         }
     }
 
-    public static void sort(String[] array)
-    {
-        for (String x : array)
-             if (isNumber(x))
-                                        //  метод пузырька по убыванию
-                 for (int i = 0; i < array.length - 1; i++) {
-                     for (int j = 1; j < array.length; j++)
-                         if (!isGreaterThan(array[i], array[j])) {
-                             String tmp = array[i];
-                             array[i] = array[j];
-                             array[j] = tmp;
-                         }
-                 }
-                                         //  метод пузырька по возрастанию
-             else
-                 for (int i = 0; i < array.length - 1; i++){
-                     for (int j = 1; j < array.length; j ++)
-                         if (isGreaterThan(array[j], array[i])) {
-                             String tmp = array[j];
-                             array[j] = array[i];
-                             array[i] = tmp;
-                         }
+    public static void sort(String[] array) {
 
-                 }
+        for (int i = 0; i < array.length - 1; i++) {
+            if (isNumber(array[i]))
+                for (int j = i + 1; j < array.length; j++)
+                    if (isNumber(array[j]))
+                        if (isGreaterThan(array[i], array[j])) {
+                            String tmp = array[j];
+                            array[j] = array[i];
+                            array[i] = tmp;
+                        }
+            else
+                for (int k = i + 1; j < array.length; j++)
+                    if (!isNumber(array[k]))
+                        if (!isGreaterThan(array[i], array[k])) {
+                            String tmp = array[k];
+                            array[k] = array[i];
+                            array[i] = tmp;
+                        }
+        }
     }
+
 
     //Метод для сравнения строк: 'а' больше чем 'b'
     public static boolean isGreaterThan(String a, String b)

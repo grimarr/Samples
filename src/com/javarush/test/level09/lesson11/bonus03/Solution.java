@@ -54,15 +54,15 @@ public class Solution
             if (isNumber(array[i]))
                 for (int j = i + 1; j < array.length; j++)
                     if (isNumber(array[j]))
-                        if (isGreaterThan(array[i], array[j])) {
+                        if (!isGreaterThan(array[i], array[j])) {
                             String tmp = array[j];
                             array[j] = array[i];
                             array[i] = tmp;
                         }
             else
-                for (int k = i + 1; j < array.length; j++)
+                for (int k = i + 1; k < array.length; k++)
                     if (!isNumber(array[k]))
-                        if (!isGreaterThan(array[i], array[k])) {
+                        if (isGreaterThan(array[i], array[k])) {
                             String tmp = array[k];
                             array[k] = array[i];
                             array[i] = tmp;

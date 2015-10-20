@@ -8,9 +8,10 @@ import java.util.ArrayList;
 Задача: Пользователь вводит с клавиатуры список слов (и чисел). Слова вывести в возрастающем порядке, числа - в убывающем.
 Пример ввода:
 Вишня
-1
+11
 Боб
-3
+7
+9
 Яблоко
 2
 0
@@ -50,24 +51,20 @@ public class Solution
 
     public static void sort(String[] array) {
 
-        for (int i = 0; i < array.length - 1; i++)
-           if (isNumber(array[i]))
-                for (int j = i + 1; j < array.length; j++)
-                    if (isNumber(array[j]) && !isGreaterThan(array[i], array[j])) {
-                            String tmp = array[j];
-                            array[j] = array[i];
-                            array[i] = tmp;
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = i + 1; j < array.length; j++)
+                if (isNumber(array[i]) && isNumber(array[j]) && (Integer.parseInt(array[i]) < Integer.parseInt(array[j]))) {
+                        String tmp = array[j];
+                        array[j] = array[i];
+                        array[i] = tmp;
                     }
-        for (int i = 0; i < array.length - 1; i++)
-            if (!isNumber(array[i]))
-                for (int k = i + 1; k < array.length; k++)
-                    if (!isNumber(array[k]) && isGreaterThan(array[i], array[k])) {
-                            String tmp = array[k];
-                            array[k] = array[i];
-                            array[i] = tmp;
+                else if (!isNumber(array[i]) && !isNumber(array[j]) && isGreaterThan(array[i], array[j])) {
+                        String tmp = array[j];
+                        array[j] = array[i];
+                        array[i] = tmp;
                     }
+        }
     }
-
     //Метод для сравнения строк: 'а' больше чем 'b'
     public static boolean isGreaterThan(String a, String b)
     {

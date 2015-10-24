@@ -3,7 +3,7 @@ package com.javarush.test.level10.lesson11.home05;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collections;
+
 
 /* Количество букв
 Ввести с клавиатуры 10 строчек и подсчитать в них количество различных букв (для 33 букв алфавита).  Вывести результат на экран.

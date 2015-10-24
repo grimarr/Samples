@@ -15,7 +15,7 @@ public class Solution
     public static void main(String[] args) throws IOException
     {
         BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
-        Map<String, String> map = new HashMap<>();
+        Map<String, String> map = new HashMap<String, String>();
         map.put("January", "1");
         map.put("February", "2");
         map.put("March", "3");

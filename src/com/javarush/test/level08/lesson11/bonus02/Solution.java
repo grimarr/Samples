@@ -32,7 +32,7 @@ public class Solution
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         //list of addresses
-        Map<String, String> addresses = new HashMap<>();
+        Map<String, String> addresses = new HashMap<String, String>();
         while (true)
         {
             String family = reader.readLine();

@@ -59,7 +59,7 @@ public class Solution
         kid3.name = "Ребенок3";
         kid3.sex = true;
         kid3.age = 2;
-        ArrayList<Human> humans = new ArrayList<>();
+        ArrayList<Human> humans = new ArrayList<Human>();
         Collections.addAll(humans, grandfather,grandfather1,grandmother,grandmother1,father,mother,kid1,kid2,kid3);
         for (Human x : humans)
         System.out.println(x);
@@ -70,7 +70,7 @@ public class Solution
         String name;
         boolean sex;
         int age;
-        ArrayList<Human> children = new ArrayList<>();
+        ArrayList<Human> children = new ArrayList<Human>();
 
         public String toString()
         {

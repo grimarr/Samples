@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+
 /* Количество букв
 Ввести с клавиатуры 10 строчек и подсчитать в них количество различных букв (для 33 букв алфавита).  Вывести результат на экран.
 Пример вывода:
@@ -17,8 +18,7 @@ import java.util.ArrayList;
 
 public class Solution
 {
-    public static void main(String[] args)  throws Exception
-    {
+    public static void main(String[] args)  throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         //алфавит
@@ -26,21 +26,41 @@ public class Solution
         char[] abcArray = abc.toCharArray();
 
         ArrayList<Character> alphabet = new ArrayList<Character>();
-        for (int i = 0; i < abcArray.length; i++)
-        {
+        for (int i = 0; i < abcArray.length; i++) {
             alphabet.add(abcArray[i]);
         }
 
         //ввод строк
         ArrayList<String> list = new ArrayList<String>();
-        for (int i = 0; i < 10; i++)
-        {
+        for (int i = 0; i < 10; i++) {
             String s = reader.readLine();
             list.add(s.toLowerCase());
         }
 
+        //создать список значений и занулить его
+        ArrayList<Integer> values = new ArrayList<Integer>();
+        for (int i = 0; i < alphabet.size(); i++)
+            values.add(0);
 
-        //напишите тут ваш код
+        // для каждой записи строк изменить список значений
+        for (String j : list)
+            for (int i = 0; i < alphabet.size(); i++)
+                values.set(i, values.get(i) + counts(j, alphabet.get(i)));
+
+        for (int i = 0; i < alphabet.size(); i++) {
+            System.out.println(alphabet.get(i) + " " + values.get(i));
+        }
+
+    }
+        // метод счетчика соответсвия буквы в слове заданной букве
+        public static int counts(String words, char check)
+        {
+            int count = 0;
+            for (int i = 0; i < words.length(); i++)
+                if(words.charAt(i) == check)
+                    count++;
+            return count;
+
     }
 
 }
